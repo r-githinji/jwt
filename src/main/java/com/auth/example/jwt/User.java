@@ -131,11 +131,11 @@ public class User implements Serializable, UserDetails {
 
 	@Override
 	public boolean equals(Object other) {
-		if (null == other || !(other instanceof User)) {
-			return false;
-		} else if (this == other) {
+		if (this == other) {
 			return true;
-		}
+		} else if (null == other || !(other instanceof User)) {
+			return false;
+		}  
 		User that = (User)other;
 		return username.contentEquals(that.getUsername());
 	}

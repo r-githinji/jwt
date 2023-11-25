@@ -62,11 +62,11 @@ public class Authority implements Serializable {
 		
 	@Override
 	public boolean equals(Object other) {
-		if (null == other || !(other instanceof Authority)) {
-			return false;
-		} else if (this == other) {
+		if (this == other) {
 			return true;
-		}
+		} else if (null == other || !(other instanceof Authority)) {
+			return false;
+		} 
 		Authority that = (Authority)other;
 		return name == that.getName() && login.equals(that.getLogin());
 	}
